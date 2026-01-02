@@ -1,40 +1,44 @@
-Visible Webpage Screenshot Downloader
-Ein minimalistisches Browser-Tool zur sofortigen Erfassung des sichtbaren Webseitenbereichs als optimierte WebP-Datei.
+# Visible Webpage Screenshot Downloader
 
-Quick Info
-Website: fragklar.de
+Ein leichtgewichtiges Browser-Extension-Tool, um den sichtbaren Bereich einer Webseite mit nur einem Klick zu erfassen und direkt als WebP-Datei zu speichern.
 
-Version: 1.1
+---
 
+## 🚀 Features
 
-Lizenz: MIT 
+* **Schnelle Erfassung:** Nimmt sofort den aktuell sichtbaren Bereich des aktiven Tabs auf.
+* **WebP-Optimierung:** Konvertiert Screenshots direkt in das moderne WebP-Format für eine optimale Balance zwischen Bildqualität und geringer Dateigröße.
+* **Minimalistisches Design:** Ein einfacher Klick genügt, um den Download auszulösen.
+* **Manifest V3:** Entwickelt nach den neuesten Sicherheits- und Performance-Standards für Browser-Erweiterungen.
 
-Features
-Schnelle Erfassung: Nimmt sofort den aktuell sichtbaren Bereich auf.
+## 🛠️ Installation (Entwicklermodus)
 
-WebP-Konvertierung: Nutzt das moderne WebP-Format für kleine Dateigrößen bei hoher Qualität.
+Da dieses Plugin aktuell als Quellcode vorliegt, kannst du es wie folgt in deinem Browser (Chrome, Edge, Brave) installieren:
 
-Manifest V3: Konform mit den neuesten Browser-Standards.
+1. Lade dieses Repository herunter oder entpacke die `Visible Webpage Screenshot Downloader.zip`.
+2. Öffne deinen Browser und navigiere zu `chrome://extensions/`.
+3. Aktiviere oben rechts den **Entwicklermodus** (Developer Mode).
+4. Klicke auf **Entpackte Erweiterung laden** (Load unpacked).
+5. Wähle den Ordner aus, der die `manifest.json` enthält.
 
-Privatsphäre: Lokale Verarbeitung ohne externe Server-Kommunikation.
+## 📖 Funktionsweise
 
-Installation (Entwicklermodus)
-Repository herunterladen und entpacken.
+Die Erweiterung nutzt die `chrome.tabs.captureVisibleTab`-API, um das aktuelle Fenster zu erfassen:
 
-Im Browser chrome://extensions/ öffnen.
+1. **Erfassung:** Das Bild wird technisch als PNG im Hintergrund aufgenommen.
+2. **Verarbeitung:** Ein injiziertes Skript zeichnet das Bild auf ein unsichtbares Canvas-Element.
+3. **Konvertierung & Download:** Das Bild wird in einen WebP-Blob umgewandelt und automatisch als `screenshot.webp` heruntergeladen.
 
-Den Entwicklermodus (oben rechts) aktivieren.
+## 📄 Technische Details
 
-Auf Entpackte Erweiterung laden klicken.
+* **Version:** 1.1
+* **Berechtigungen:** `activeTab`, `scripting`, `tabs`
+* **Autor:** [fragklar.de](https://fragklar.de)
 
-Den Ordner mit der manifest.json auswählen.
+## ⚖️ Lizenz
 
-Technische Details
-Berechtigungen: activeTab, scripting, tabs.
+Dieses Projekt steht unter der **MIT-Lizenz**.
 
-Dateiformat: WebP (Konvertierung via HTML5-Canvas).
-
-Download: Automatisch unter dem Namen screenshot.webp.
-
-Lizenz
-Copyright (c) 2026 fragklar.de. Lizenziert unter der MIT-Lizenz. Die Software wird ohne Gewährleistung bereitgestellt.
+> Copyright (c) 2026 [Fragklar.de](https://fragklar.de)
+>
+> Die Software wird "wie besehen" (as is) zur Verfügung gestellt, ohne jegliche Gewährleistung. In keinem Fall sind die Autoren oder Urheberrechtsinhaber für Ansprüche, Schäden oder sonstige Haftung haftbar.
